@@ -1,4 +1,22 @@
+---
+import CardWallIcon from "./Icons/cardwall.astro";
+import FeatureForestIcon from "./Icons/feature-forest.astro";
+---
+
 <nav
   class="md:hidden sticky bottom-0 mt-auto h-[4rem] px-4 py-2 bg-white/20 backdrop-blur-sm border-t border-white/50"
 >
+  <div class="flex justify-around items-center">
+    <a href="/cardwall" class="flex items-center flex-col gap-1 text-slate-500">
+      <CardWallIcon className="w-5 h-5" />
+      <span class="text-xs">Cardwall</span>
+    </a>
+    <a
+      href="/feature-forest"
+      class="flex items-center flex-col gap-1 text-slate-500"
+    >
+      <FeatureForestIcon className="w-5 h-5" />
+      <span class="text-xs">Feature Forest</span>
+    </a>
+  </div>
 </nav>

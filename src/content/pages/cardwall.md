@@ -32,7 +32,7 @@ You can have as many users on your instance of Cardwall as your deployment confi
 
 ### What licence is Cardwall released under?
 
-Cardwall will be released under the ONCE License [sic] Agreement.
+Cardwall will be released under the [ONCE License [sic] Agreement](https://once.com/license).
 
 ### What kind of support is provided?
 

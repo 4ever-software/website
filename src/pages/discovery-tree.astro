@@ -1,0 +1,75 @@
+---
+import { getEntry } from "astro:content";
+import Tabbar from "../components/Tabbar.astro";
+
+const entry = await getEntry({
+  collection: "pages",
+  slug: "cardwall",
+});
+const { Content } = await entry.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="flex flex-col bg-stone-100 text-slate-800">
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md">
+      <div
+        class="max-w-[100rem] w-full mx-auto flex items-center justify-between px-4 md:px-12 py-8 md:pr-[36rem]"
+      >
+        <a href="/" class="text-2xl font-bold"> Once, Forever </a>
+        <nav class="flex gap-4">
+          <a href="/about" class="text-lg font-bold"> Overview </a>
+          <a href="/contact" class="text-lg font-bold"> Changelog </a>
+        </nav>
+      </div>
+    </header>
+    <div
+      class="max-w-[100rem] w-full mx-auto flex flex-col md:flex-row gap-4 px-4"
+    >
+      <div
+        class="order-2 md:order-1 basis-4/5 flex flex-col gap-8 prose max-w-prose mx-auto text-2xl pt-24 [&_sup]:text-xs [&_sup]:text-slate-500 [&_sup]:rounded-full [&_sup]:border [&_sup]:border-slate-500 [&_sup]:px-2 [&_sup]:py-1"
+      >
+        <Content />
+      </div>
+      <div
+        class="md:sticky top-0 z-50 order-1 md:order-2 md:basis-[30rem] bg-white md:self-start md:-mt-24 rounded-b-xl"
+      >
+        <div
+          class="flex flex-row gap-4 justify-between items-center h-[4rem] border-b border-slate-100 p-4"
+        >
+          <h2 class="text-2xl font-bold">CardWall</h2>
+          <h3 class="text-xl font-bold">$100/once</h3>
+        </div>
+        <div class="p-4 text-slate">
+          <h4 class="font-bold">What's included?</h4>
+          <ul class="list-disc list-inside">
+            <li>The code</li>
+            <li>One click/one command installation</li>
+            <li>Free updates for life</li>
+            <li>Bare bones support included</li>
+          </ul>
+          <h4 class="font-bold">I paid, what now?</h4>
+          <p>
+            Now that you've paid, we've sent you an email with everything you
+            need to use CardWall.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="py-24 px-4 text-xs text-slate-500 max-w-full w-[92rem] text-left mx-auto"
+    >
+      Once, Forever and CardWall are designed, built, and backed by Once,
+      Forever. Copyright © Once, Forever LLC. All rights reserved.
+    </footer>
+
+    <Tabbar />
+  </body>
+</html>

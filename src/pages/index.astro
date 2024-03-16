@@ -1,0 +1,38 @@
+---
+import { getEntry } from "astro:content";
+import Tabbar from "../components/Tabbar.astro";
+
+const entry = await getEntry({
+  collection: "pages",
+  slug: "homepage",
+});
+const { Content } = await entry.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="flex flex-col bg-stone-100 text-slate-800">
+    <div class="flex flex-col gap-4 max-w-full w-[54rem] mx-auto text-2xl p-4">
+      <h1 class="font-bold py-24">Once, Forever</h1>
+
+      <div class="flex flex-col gap-8">
+        <Content />
+      </div>
+    </div>
+
+    <footer
+      class="py-24 px-4 text-xs text-slate-500 max-w-full w-[54rem] text-left mx-auto"
+    >
+      Once, Forever and CardWall are designed, built, and backed by Once,
+      Forever. Copyright © Once, Forever LLC. All rights reserved.
+    </footer>
+
+    <Tabbar />
+  </body>
+</html>

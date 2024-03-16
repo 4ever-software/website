@@ -11,21 +11,21 @@ const entry = await getEntry({
 const { Content } = await entry.render();
 ---
 
-<Application title={entry.data.title}>
+<Application title={entry.data.title} colorScheme="light">
   <div class="flex flex-col gap-4 max-w-full w-[54rem] mx-auto text-2xl p-4">
     <div class="flex flex-row gap-4 items-center justify-between">
-      <h1 class="font-bold py-24">4ever Software</h1>
+      <h1 class="font-bold">4ever Software</h1>
       <div class="flex flex-row gap-2">
         <a
           href="/cardwall"
-          class="flex items-center flex-col gap-1 text-slate-500 hover:text-purple-600"
+          class="flex items-center flex-col gap-1 text-slate-100 hover:text-purple-600"
         >
           <CardwallIcon className="w-5 h-5" />
           <span class="text-xs">Cardwall</span>
         </a>
         <a
           href="/feature-forest"
-          class="flex items-center flex-col gap-1 text-slate-500 hover:text-purple-600"
+          class="flex items-center flex-col gap-1 text-slate-100 hover:text-purple-600"
         >
           <FeatureForestIcon className="w-5 h-5" />
           <span class="text-xs">Feature Forest</span>
@@ -33,13 +33,19 @@ const { Content } = await entry.render();
       </div>
     </div>
 
-    <div class="flex flex-col gap-8">
+    <div class="w-full max-w-[20rem] mx-auto py-12">
+      <img src="/logo.png" role="presentation" />
+    </div>
+
+    <div class="flex
+        flex-col
+        gap-8">
       <Content />
     </div>
   </div>
 
   <footer
-    class="py-24 px-4 text-xs text-slate-500 max-w-full w-[54rem] text-left mx-auto"
+    class="py-24 px-4 text-xs text-slate-100 max-w-full w-[54rem] text-left mx-auto"
   >
     4ever Software and CardWall are designed, built, and backed by Forever
     Software. Copyright © 4ever Software LLC. All rights reserved.

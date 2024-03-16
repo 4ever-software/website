@@ -1,7 +1,7 @@
 ---
 import Tabbar from "../components/Tabbar.astro";
 
-let { title } = Astro.props;
+let { title, colorScheme = "light" } = Astro.props;
 
 if (title) {
   title = `${title} | 4ever Software`;
@@ -18,7 +18,14 @@ if (title) {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="flex flex-col bg-stone-100 text-slate-800">
+  <body
+    class={[
+      "flex flex-col",
+      colorScheme == "dark"
+        ? "bg-[#221708] text-stone-300"
+        : "bg-stone-100 text-slate-700",
+    ].join(" ")}
+  >
     <slot />
     <Tabbar />
   </body>

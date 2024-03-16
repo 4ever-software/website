@@ -22,7 +22,7 @@ By pre-ordering, you get a significant discount on the final release product. Yo
 
 You will receive a link to a download of the Cardwall application.
 
-## How do I install it?
+### How do I install it?
 
 The short answer is: however you want. Once you buy it, it's yours. There is included documentation with instructions on how to setup and run the application. Additionally, there is documentation and configuration help for running on existing platforms such as Render, Fly.io.
 

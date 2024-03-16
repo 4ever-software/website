@@ -1,0 +1,25 @@
+---
+import Tabbar from "../components/Tabbar.astro";
+
+let { title } = Astro.props;
+
+if (title) {
+  title = `${title} | Once, Forever`;
+} else {
+  title = "Once, Forever";
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="flex flex-col bg-stone-100 text-slate-800">
+    <slot />
+    <Tabbar />
+  </body>
+</html>

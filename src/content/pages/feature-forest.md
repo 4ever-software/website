@@ -1,8 +1,9 @@
 ---
 title: Feature Forest
+price: 99.99
 ---
 
-# Feature Forest <sup>1.0.0</sup>
+# Feature Forest <sup>pre-order</sup>
 
 ## A drop dead simple app for creating a discovery tree.<br /> No subscription. The code belongs to you, forever.
 

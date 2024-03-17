@@ -1,8 +1,9 @@
 ---
 title: Cardwall
+price: 39.99
 ---
 
-# Cardwall <sup>1.0.0</sup>
+# Cardwall <sup>pre-order</sup>
 
 ## A drop dead simple app for creating walls of cards. <br />No subscription. The code belongs to you, forever.
 

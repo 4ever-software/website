@@ -4,11 +4,15 @@ price: 99.99
 preorder: true
 ---
 
-# Feature Forest <sup>pre-order</sup>
+# Feature Forest <sup>Pre-order</sup>
 
 ## A drop dead simple app for creating a discovery tree.<br /> No subscription. The code belongs to you, forever.
 
 Agile teams don't build features in one go. Feature Forest helps you discover your dependency tree and deliver one step at a time. Pay once, click a button, start using. Or download, run one command, and host it for your entire company. It's yours.
+
+<video class="aspect-video w-full rounded-xl" controls>
+  <source src="/feature-forest.mp4" type="video/mp4" />
+</video>
 
 ## Frequently asked questions
 

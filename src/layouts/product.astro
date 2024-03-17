@@ -18,13 +18,17 @@ pattern-size-6 w-[100w] h-[100vh] fixed inset-0 z-0"
   </div>
   <header class="sticky top-0 z-50 bg-white/50 backdrop-blur-md z-1">
     <div
-      class="max-w-[100rem] w-full mx-auto flex items-center justify-between px-4 py-8 md:pl-20 md:pr-[33rem]"
+      class="max-w-[100rem] w-full mx-auto flex items-center justify-between px-4 py-8 md:pr-[24rem] lg:pr-[28rem] xl:pl-20 xl:pr-[33rem]"
     >
-      <a href="/" class="text-2xl font-bold"> 4ever Software </a>
+      <a href="/" class="text-md md:text-lg md:text-2xl font-bold">
+        4ever Software
+      </a>
       <nav class="flex gap-4">
-        <a href="/cardwall" class="text-lg font-bold"> Overview </a>
-        <a href="/cardwall/changelog" class="text-lg font-bold"> Changelog </a>
-        <a href="/support" class="text-lg font-bold"> Support </a>
+        <a href="/cardwall" class="text-md md:text-lg font-bold"> Overview </a>
+        <a href="/cardwall/changelog" class="text-md md:text-l font-bold">
+          Changelog
+        </a>
+        <a href="/support" class="text-md md:text-l font-bold"> Support </a>
       </nav>
     </div>
   </header>
@@ -32,7 +36,7 @@ pattern-size-6 w-[100w] h-[100vh] fixed inset-0 z-0"
     class="relative z-1 max-w-[100rem] w-full mx-auto flex flex-col md:flex-row gap-4 px-4"
   >
     <div
-      class="order-2 md:order-1 basis-4/5 flex flex-col gap-8 prose max-w-prose mx-auto text-2xl pt-24 [&_sup]:text-xs [&_sup]:text-slate-500 [&_sup]:rounded-full [&_sup]:border [&_sup]:border-slate-500 [&_sup]:px-2 [&_sup]:py-1"
+      class="order-2 md:order-1 basis-4/5 flex flex-col gap-8 prose max-w-prose mx-auto text-2xl pt-24 [&_sup]:text-xs [&_sup]:text-slate-500 [&_sup]:rounded-full [&_sup]:border [&_sup]:border-slate-500 [&_sup]:px-2 [&_sup]:relative [&_sup]:-top-6"
     >
       <slot />
     </div>
@@ -50,7 +54,12 @@ pattern-size-6 w-[100w] h-[100vh] fixed inset-0 z-0"
           preorder && (
             <>
               <h4 class="font-bold">Why pre-order?</h4>
-              <p>By pre-ordering, you will receive a <em>significant discount</em>, early access to the beta, the chance to have your requests and wishes implemented, and our undying gratitude.</p>
+              <p>
+                By pre-ordering, you will receive a{" "}
+                <em>significant discount</em>, early access to the beta, the
+                chance to have your requests and wishes implemented, and our
+                undying gratitude.
+              </p>
             </>
           )
         }
@@ -63,8 +72,8 @@ pattern-size-6 w-[100w] h-[100vh] fixed inset-0 z-0"
         </ul>
         <h4 class="font-bold">I paid, what now?</h4>
         <p>
-          Now that you've paid, we've sent you an email with everything
-          you need to use {product}.
+          Now that you've paid, we've sent you an email with everything you need
+          to use {product}.
         </p>
       </div>
       <div class="p-4">

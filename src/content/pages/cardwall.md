@@ -4,7 +4,7 @@ price: 39.99
 preorder: true
 ---
 
-# Cardwall <sup>pre-order</sup>
+# Cardwall <sup>Pre-order</sup>
 
 ## A drop dead simple app for creating walls of cards. <br />No subscription. The code belongs to you, forever.
 

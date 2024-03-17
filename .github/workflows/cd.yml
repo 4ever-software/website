@@ -27,12 +27,17 @@ jobs:
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
         # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
+  list:
+    needs: build
+    runs-on: ubuntu-latest
+    - run: |
+        ls
+
+        
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          ls
       - uses: up9cloud/action-rsync@v1.4
         env:
           USER: deploy

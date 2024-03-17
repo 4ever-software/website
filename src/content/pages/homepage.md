@@ -11,7 +11,3 @@ We believe that software should be something you own, not something you rent. Th
 When you buy our software, you get a perpetual license to use it forever. You can install it on as many devices as you like, and you'll never have to pay for it again.
 
 So stop renting your software and start owning it. Buy our software once, and it's yours forever.
-
-Interested?
-
-Sign up for our newsletter to get updates on our latest products and special offers.

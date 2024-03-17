@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: '4ever.software',
+  site: 'https://4ever.software',
   integrations: [tailwind(), sitemap()]
 });

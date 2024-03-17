@@ -41,6 +41,38 @@ const { Content } = await entry.render();
         flex-col
         gap-8">
       <Content />
+
+      <p>
+        P.S: want to get notified when our products come out of pre-order, and
+        when we release new products?
+      </p>
+      <button
+        id="newsletter_cta"
+        class="bg-none text-purple-600 py-2 px-4 rounded-md"
+      >
+        Sign up for our newsletter
+      </button>
+      <form
+        id="newsletter"
+        class="hidden w-full flex flex-row rounded-full bg-stone-50 p-2"
+      >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="outline-none w-full bg-transparent appearance-none px-4"
+          placeholder="Enter your email"
+        />
+        <button
+          type="submit"
+          class="bg-purple-600 text-white py-2 px-4 rounded-full"
+        >
+          Subscribe
+        </button>
+      </form>
+      <p id="newsletter_success" class="hidden">
+        Thanks for subscribing! We'll keep you updated.
+      </p>
     </div>
   </div>
 
@@ -50,4 +82,34 @@ const { Content } = await entry.render();
     4ever Software and CardWall are designed, built, and backed by Forever
     Software. Copyright © 4ever Software LLC. All rights reserved.
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document
+        .getElementById("newsletter_cta")
+        ?.addEventListener("click", (e) => {
+          (e.currentTarget as HTMLElement).classList.toggle("hidden");
+          document.getElementById("newsletter")?.classList.toggle("hidden");
+        });
+
+      document.getElementById("newsletter")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target as HTMLFormElement);
+        const email = data.get("email") as string;
+
+        window._dcq.push([
+          "identify",
+          {
+            email,
+            success: function () {
+              document.getElementById("newsletter")?.classList.add("hidden");
+              document
+                .getElementById("newsletter_success")
+                ?.classList.remove("hidden");
+            },
+          },
+        ]);
+      });
+    });
+  </script>
 </Application>

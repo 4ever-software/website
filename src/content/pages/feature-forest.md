@@ -1,6 +1,7 @@
 ---
 title: Feature Forest
 price: 99.99
+preorder: true
 ---
 
 # Feature Forest <sup>pre-order</sup>

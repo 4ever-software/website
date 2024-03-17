@@ -6,6 +6,7 @@ const pageCollection = defineCollection({
     title: z.string(),
     draft: z.boolean().default(false),
     price: z.number().optional(),
+    preorder: z.boolean().optional().default(false),
   }),
 });
 

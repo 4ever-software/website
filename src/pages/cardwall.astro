@@ -9,6 +9,12 @@ const entry = await getEntry({
 const { Content } = await entry.render();
 ---
 
-<Product product="Cardwall" title={entry.data.title} colorScheme="light" price={entry.data.price}>
+<Product
+  product="Cardwall"
+  title={entry.data.title}
+  colorScheme="light"
+  price={entry.data.price}
+  preorder={entry.data.preorder}
+>
   <Content />
 </Product>

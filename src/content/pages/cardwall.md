@@ -1,6 +1,7 @@
 ---
 title: Cardwall
 price: 39.99
+preorder: true
 ---
 
 # Cardwall <sup>pre-order</sup>

@@ -39,6 +39,6 @@ jobs:
         env:
           USER: deploy
           HOST: 4ever.software
-          KEY: ${{secrets.DEPLOY_SSH_KEY}}
+          KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SOURCE: dist/
           TARGET: /srv/www/4ever.software/htdocs

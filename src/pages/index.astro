@@ -90,6 +90,7 @@ const { Content } = await entry.render();
         ?.addEventListener("click", (e) => {
           (e.currentTarget as HTMLElement).classList.toggle("hidden");
           document.getElementById("newsletter")?.classList.toggle("hidden");
+          document.getElementById("email")?.focus();
         });
 
       document.getElementById("newsletter")?.addEventListener("submit", (e) => {

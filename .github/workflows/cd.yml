@@ -30,8 +30,8 @@ jobs:
   list:
     needs: build
     runs-on: ubuntu-latest
-    - run: |
-        ls
+    steps:
+      - run: ls
 
         
   deploy:

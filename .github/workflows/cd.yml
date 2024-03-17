@@ -38,3 +38,6 @@ jobs:
           KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SOURCE: dist/
           TARGET: /srv/www/4ever.software/htdocs
+      - runs: |
+          ls
+          

@@ -31,6 +31,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          ls
       - uses: up9cloud/action-rsync@v1.4
         env:
           USER: deploy
@@ -38,6 +40,3 @@ jobs:
           KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SOURCE: dist/
           TARGET: /srv/www/4ever.software/htdocs
-      - run: |
-          ls
-          

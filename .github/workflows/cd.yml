@@ -34,6 +34,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v2
+      - uses: up9cloud/action-rsync@v1.4
+        env:
+          USER: deploy
+          HOST: 4ever.software
+          KEY: ${{secrets.DEPLOY_SSH_KEY}}
+          SOURCE: dist/
+          TARGET: /srv/www/4ever.software/htdocs

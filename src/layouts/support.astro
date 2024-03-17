@@ -1,0 +1,108 @@
+---
+import Application from "./application.astro";
+
+let { title, colorScheme = "light", product } = Astro.props;
+---
+
+<Application title={title} colorScheme={colorScheme}>
+  <div
+    class="pattern-dots pattern-stone-200 pattern-bg-stone-100
+pattern-size-6 w-[100w] h-[100vh] fixed inset-0 z-0"
+  >
+  </div>
+  <header class="sticky top-0 z-50 bg-white/50 backdrop-blur-md z-1">
+    <div
+      class="max-w-[100rem] w-full mx-auto flex items-center justify-between px-4 py-8 md:pl-20 md:pr-[33rem]"
+    >
+      <a href="/" class="text-2xl font-bold"> 4ever Software </a>
+    </div>
+  </header>
+  <div
+    class="relative z-1 max-w-[100rem] w-full mx-auto flex flex-col md:flex-row gap-4 px-4"
+  >
+    <div
+      class="order-2 md:order-1 basis-4/5 flex flex-col gap-8 prose max-w-prose mx-auto text-2xl pt-24 [&_sup]:text-xs [&_sup]:text-slate-500 [&_sup]:rounded-full [&_sup]:border [&_sup]:border-slate-500 [&_sup]:px-2 [&_sup]:py-1"
+    >
+      <slot />
+    </div>
+    <div
+      class="md:sticky top-0 z-40 md:z-50 order-1 md:order-2 md:basis-[30rem] bg-white md:self-start md:-mt-24 rounded-b-xl"
+    >
+      <div
+        class="flex flex-col gap-0 justify-between items-center h-[6.1rem] border-b border-slate-100 p-4"
+      >
+        <h2 class="text-2xl font-bold">Get in touch</h2>
+        <p class="text-md text-slate-500">
+          We respond within 2-3 business days
+        </p>
+      </div>
+      <div class="p-8 text-slate prose text-stone-500 bg-stone-50">
+        <form id="contact" action="/support" method="post" class="w-full">
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+              <label for="name" class="text-slate-500">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="border border-slate-100 rounded-md p-2"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="email" class="text-slate-500">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="border border-slate-100 rounded-md p-2"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="message" class="text-slate-500">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="border border-slate-100 rounded-md p-2"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="p-4">
+        <button
+          type="submit"
+          form="contact"
+          class="block text-center w-full bg-gradient-to-b from-emerald-600 to-emerald-500 text-white px-8 py-2 border border-green-100 rounded-2xl text-2xl font-semibold"
+        >
+          Send message
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer
+    class="py-24 px-4 text-xs text-slate-500 max-w-full w-[92rem] text-left mx-auto"
+  >
+    4ever Software and all products are designed, built, and backed by 4ever
+    Software. Copyright © 4ever Software LLC. All rights reserved.
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("contact").addEventListener("submit", (e) => {
+        e.preventDefault();
+        let form = e.currentTarget as HTMLFormElement;
+
+        if (!form) return;
+
+        let data = new FormData(form);
+        let name = data.get("name") as string;
+        let email = data.get("email") as string;
+        let message = data.get("message") as string;
+
+        window.posthog.capture("visitor_requested_support", { message });
+        window.posthog.identify(email, { name });
+
+        window.location.pathname = "/thanks";
+      });
+    });
+  </script>
+</Application>

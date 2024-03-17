@@ -1,0 +1,13 @@
+---
+import { getEntry } from "astro:content";
+import SupportLayout from "../layouts/support.astro";
+const entry = await getEntry({
+  collection: "pages",
+  slug: "thanks",
+});
+const { Content } = await entry.render();
+---
+
+<SupportLayout>
+  <Content />
+</SupportLayout>
